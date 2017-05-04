@@ -10,10 +10,17 @@ public class CardPayment {
         private double amount;
         private CreditCard card;
 
+        /*
+        * Constructor
+        * */
         public CardPayment(CreditCard card, double amount){
             this.amount = amount;
             this.card = card;
         }
+
+        /*
+        * Authenticates using the authentication service in PaymentAuthorization class and then returns "transaction successful/denied" based on result(Always true in this though).
+        * */
         public boolean Authentication(CreditCard card, double amount) {
             boolean auth = PaymentAuthorization.authorizePayment(card, amount);
             if (auth == true){

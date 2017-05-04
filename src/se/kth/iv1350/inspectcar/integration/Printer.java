@@ -6,11 +6,16 @@ package se.kth.iv1350.inspectcar.integration;
 
 public class Printer {
 
+    /*
+    * Prints the cost of the inspections as the receipt.
+    * */
     public static void PrintReceipt(double cost) {
         System.out.println("Receipt: " + cost);
     }
-
+    /*
+    * Prints the name of an inspection.
+    * */
     public static void PrintResult(InspectionRegistry i) {
-        System.out.println( i.getName());
+        System.out.println(i.getName());
     }
 }

@@ -7,10 +7,16 @@ import se.kth.iv1350.inspectcar.integration.Printer;
 public class Receipt {
     private double cost;
 
+    /*
+    * Constructor
+    * */
     public Receipt(){
         this.cost = Inspection.getCost();
     }
-    public void sendReceipt(){
+    /*
+    * Sends the receipt to the printer which prints it out.
+    * */
+    public void SendReceipt(){
         Printer.PrintReceipt(cost);
     }
 

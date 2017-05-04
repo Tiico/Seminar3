@@ -20,20 +20,20 @@ public class View {
         double amount = 2500;
         CreditCard card = new CreditCard(2156, "6324524651488574", "Karl Karlsson", "2018-10", 542);
 
-        contr.callNextInspection();
-        contr.operateDoor(false);
-        double cost = contr.enterRegNo(regNoOfVehicleToInspect);
+        contr.CallNextInspection();
+        contr.OperateDoor(false);
+        double cost = contr.EnterRegNo(regNoOfVehicleToInspect);
         contr.AuthenticateCard(card, amount);
-        contr.showReceipt();
+        contr.ShowReceipt();
         contr.ShowInspectionList(regNoOfVehicleToInspect);
 
-        contr.showInspection();
-        contr.enterResult(true);
-        contr.showInspection();
-        contr.enterResult(false);
-        contr.showInspection();
-        contr.enterResult(true);
-        contr.showInspection();
+        contr.ShowInspection();
+        contr.EnterResult(true);
+        contr.ShowInspection();
+        contr.EnterResult(false);
+        contr.ShowInspection();
+        contr.EnterResult(true);
+        contr.ShowInspection();
 
         System.out.println("The cost is: " + cost);
     }

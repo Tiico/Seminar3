@@ -18,6 +18,9 @@ public class DBManager {
         createDummyInspections();
     }
 
+    /*
+    * Getter for the dummyInspectionList
+    * */
     public List<InspectionRegistry> getList(){
         return this.dummyInspectionList;
     }

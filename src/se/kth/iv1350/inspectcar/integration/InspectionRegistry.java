@@ -13,7 +13,9 @@ public class InspectionRegistry {
         this.name = name;
         this.cost = cost;
     }
-
+    /*
+    * Getters
+    * */
     public int getCost(){
         return cost;
     }

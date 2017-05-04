@@ -21,6 +21,9 @@ public class Inspection {
         inspections = dbmgr.findInspectionsForCar(car);
     }
 
+    /*
+    * Prints the full list of inspections
+    * */
     public void FullInspection(){
         DBManager DB = new DBManager();
         List<InspectionRegistry> list = DB.getList();
@@ -31,7 +34,9 @@ public class Inspection {
         }
         System.out.println("--------------------");
     }
-
+    /*
+    * returns the cost of the inspections
+    * */
     public static double getCost() {
         double totalCost = 0;
         if (inspections == null) {

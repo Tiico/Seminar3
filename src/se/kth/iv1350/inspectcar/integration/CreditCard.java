@@ -9,6 +9,9 @@ public class CreditCard {
     private final String expiryDate;
     private final int CVC;
 
+    /*
+    * Constructor
+    * */
     public CreditCard(int pin, String number, String holder, String expiryDate, int CVC) {
         this.pin = pin;
         this.number = number;
@@ -17,7 +20,9 @@ public class CreditCard {
         this.CVC = CVC;
 
     }
-
+    /*
+    * Getters
+    * */
     public int getPin() {
         return this.pin;
     }

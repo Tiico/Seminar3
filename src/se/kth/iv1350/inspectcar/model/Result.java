@@ -12,7 +12,9 @@ import java.util.List;
 public class Result {
     static int InspectionNumber = -1;
 
-
+    /*
+    * Sets the grade as pass or fail based on the inspectors input.
+    * */
     public static void GradeInspections(boolean grade){
 
         DBManager DB = new DBManager();
@@ -30,6 +32,9 @@ public class Result {
         }
     }
 
+    /*
+    * Sends one of the inspections every time the method is called to the printer. If we're out of instructions it says so.
+    * */
     public static void sendResult() {
         DBManager DB = new DBManager();
         List<InspectionRegistry> list = DB.getList();
