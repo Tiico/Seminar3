@@ -1,7 +1,5 @@
 package se.kth.iv1350.inspectcar.integration;
 
-import java.util.Date;
-
 public class CreditCard {
     private final int pin;
     private final String number;
@@ -9,9 +7,15 @@ public class CreditCard {
     private final String expiryDate;
     private final int CVC;
 
-    /*
-    * Constructor
-    * */
+    /**
+     * Constructor
+     *
+     * @param pin   the card pin.
+     * @param number    the card number.
+     * @param holder    the card owner.
+     * @param expiryDate    the cards expiry date
+     * @param CVC   the CVC code
+     */
     public CreditCard(int pin, String number, String holder, String expiryDate, int CVC) {
         this.pin = pin;
         this.number = number;
@@ -20,9 +24,9 @@ public class CreditCard {
         this.CVC = CVC;
 
     }
-    /*
+    /**
     * Getters
-    * */
+    */
     public int getPin() {
         return this.pin;
     }

@@ -5,11 +5,11 @@ package se.kth.iv1350.inspectcar.view;
  */
 import se.kth.iv1350.inspectcar.controller.Controller;
 import se.kth.iv1350.inspectcar.integration.CreditCard;
+import se.kth.iv1350.inspectcar.integration.DBManager;
+import se.kth.iv1350.inspectcar.model.Inspection;
 
 public class View {
     private Controller contr;
-
-    private Controller controller;
 
     public View(Controller contr) {
         this.contr = contr;
@@ -20,20 +20,20 @@ public class View {
         double amount = 2500;
         CreditCard card = new CreditCard(2156, "6324524651488574", "Karl Karlsson", "2018-10", 542);
 
-        contr.CallNextInspection();
-        contr.OperateDoor(false);
-        double cost = contr.EnterRegNo(regNoOfVehicleToInspect);
-        contr.AuthenticateCard(card, amount);
-        contr.ShowReceipt();
-        contr.ShowInspectionList(regNoOfVehicleToInspect);
+        contr.callNextInspection();
+        contr.operateDoor(false);
+        double cost = contr.enterRegNo(regNoOfVehicleToInspect);
+        contr.authenticateCard(card, amount);
+        contr.showReceipt(regNoOfVehicleToInspect);
+        contr.showInspectionList(regNoOfVehicleToInspect);
 
-        contr.ShowInspection();
-        contr.EnterResult(true);
-        contr.ShowInspection();
-        contr.EnterResult(false);
-        contr.ShowInspection();
-        contr.EnterResult(true);
-        contr.ShowInspection();
+        contr.showInspection();
+        contr.enterResult(true);
+        contr.showInspection();
+        contr.enterResult(false);
+        contr.showInspection();
+        contr.enterResult(true);
+        contr.showInspection();
 
         System.out.println("The cost is: " + cost);
     }

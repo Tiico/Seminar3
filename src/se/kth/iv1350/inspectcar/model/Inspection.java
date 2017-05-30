@@ -8,36 +8,40 @@ import se.kth.iv1350.inspectcar.integration.InspectionRegistry;
 import se.kth.iv1350.inspectcar.integration.Printer;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class Inspection {
 
     private final Car car;
-    private static List<InspectionRegistry> inspections;
+    private List<InspectionRegistry> inspections;
+    private Printer printer;
+
 
 
     public Inspection(Car car, DBManager dbmgr){
         this.car = car;
         inspections = dbmgr.findInspectionsForCar(car);
+        this.inspections = dbmgr.getList();
+        this.printer = new Printer();
     }
 
-    /*
-    * Prints the full list of inspections
-    * */
-    public void FullInspection(){
-        DBManager DB = new DBManager();
-        List<InspectionRegistry> list = DB.getList();
+    /**
+    * Prints the full inspections of inspections
+    */
+    public void fullInspection(){
         System.out.println("--------------------");
         System.out.println("Full Inspection: ");
-        for (InspectionRegistry l : list){
-            Printer.PrintResult(l);
+        for (InspectionRegistry l : inspections){
+            printer.PrintResult(l);
         }
         System.out.println("--------------------");
     }
-    /*
-    * returns the cost of the inspections
-    * */
-    public static double getCost() {
+    /**
+    * Getters.
+    */
+    public List<InspectionRegistry> getInspections(){
+        return this.inspections;
+    }
+    public double getCost() {
         double totalCost = 0;
         if (inspections == null) {
             return 0;
@@ -47,12 +51,4 @@ public class Inspection {
         }
         return totalCost;
     }
-
-
-
-    /*
-   public InspectionList findInspectionList(String regNo) {
-        return null;
-    }
-    */
 }

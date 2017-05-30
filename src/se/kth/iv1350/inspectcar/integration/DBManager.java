@@ -8,7 +8,7 @@ import se.kth.iv1350.inspectcar.model.Car;
  * This class is responsible for database calls. This is the only place the database is called.
  */
 public class DBManager {
-    private static List<InspectionRegistry> dummyInspectionList;
+    private List<InspectionRegistry> dummyInspectionList;
 
     /**
      * Creates a new instance, which uses a hard coded list of inspections instead of calling a
@@ -25,13 +25,12 @@ public class DBManager {
         return this.dummyInspectionList;
     }
 
-    /*
-     * Searches the database for inspections to be performed on the specified vehicle. This dummy
-     * implementation returns hard coded inspections for some vehicles.
+    /**
+     * Searches the database for inspections to be performed on the specified car. This dummy
+     * implementation returns hard coded inspections for some cars.
      *
-     * @param vehicle The vehicle to inspect.
-     * @return A list of <code>InspectionItem</code>s, where each element describes one particular
-     *         control.
+     * @param car   The car to inspect.
+     * @return  A list of <code>InspectionItem</code>s, where each element describes one particular control.
      */
     public List<InspectionRegistry> findInspectionsForCar(Car car) {
         String regNR = "ABC123";

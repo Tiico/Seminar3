@@ -17,6 +17,7 @@ public class Main {
         DBManager dbMgr = new DBManager();
         Controller contr = new Controller(dbMgr);
         View view = new View(contr);
+        Printer printer = new Printer();
         view.Execution();
     }
 

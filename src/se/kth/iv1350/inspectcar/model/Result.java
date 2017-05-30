@@ -10,15 +10,24 @@ import java.util.List;
  */
 
 public class Result {
-    static int InspectionNumber = -1;
 
-    /*
-    * Sets the grade as pass or fail based on the inspectors input.
-    * */
-    public static void GradeInspections(boolean grade){
+    private Printer printer;
+    int index = -1;
+    private List<InspectionRegistry> list;
 
-        DBManager DB = new DBManager();
-        List<InspectionRegistry> list = DB.getList();
+    /**
+    * Constructor
+    */
+    public Result(DBManager dbMgr){
+        this.list = dbMgr.getList();
+        this.printer = new Printer();
+    }
+
+    /**
+     * Sets the grade as pass or fail based on the inspectors input.
+     * @param grade the grade for the inspection.
+     */
+    public void gradeInspections(boolean grade){
         int i = 0;
         boolean[] grades = new boolean[list.size()];
         if(i++ < grades.length){
@@ -35,13 +44,11 @@ public class Result {
     /*
     * Sends one of the inspections every time the method is called to the printer. If we're out of instructions it says so.
     * */
-    public static void sendResult() {
-        DBManager DB = new DBManager();
-        List<InspectionRegistry> list = DB.getList();
+    public void sendResult() {
         int length = list.size();
 
-        if(++InspectionNumber < length) {
-            Printer.PrintResult(list.get(InspectionNumber));
+        if(++index < length) {
+            printer.PrintResult(list.get(index));
         }
         else {
             System.out.println("Out of Instructions");

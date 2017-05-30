@@ -28,7 +28,7 @@ public class TestController {
     public void testCostWhenThereAreInspections() {
         String existingRegNo = "ABC123";
         int expResult = 60;
-        int result = (int) instance.EnterRegNo(existingRegNo);
+        int result = (int) instance.enterRegNo(existingRegNo);
         assertEquals("Wrong cost when inspections were found", expResult, result);
     }
 
@@ -36,7 +36,7 @@ public class TestController {
     public void testCostWhenThereAreNoInspections() {
         String nonExistingRegNo = "ABC124";
         int expResult = 0;
-        int result = (int) instance.EnterRegNo(nonExistingRegNo);
+        int result = (int) instance.enterRegNo(nonExistingRegNo);
         assertEquals("Wrong cost when there were no inspections.", expResult, result);
     }
 }
